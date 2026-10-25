@@ -1,0 +1,8 @@
+[
+  { "id": 1, "title": "Study React Router",
+    "description": "Nested routes, Outlet, and useParams" },
+  { "id": 2, "title": "Complete the workshop",
+    "description": "Task CRUD with create, edit, and delete" },
+  { "id": 3, "title": "Deploy to Vercel",
+    "description": "Remember the redirect rule to index.html" }
+]
