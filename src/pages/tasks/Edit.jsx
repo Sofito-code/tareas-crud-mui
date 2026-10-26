@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom'
 import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
@@ -15,11 +15,17 @@ export default function EditTask({ items, loading, onUpdate }) {
   // La comparación es numérica, por eso se convierte el parámetro de ruta.
   const task = items.find((item) => item.id === Number(id))
 
-  const [title, setTitle] = useState(task ? task.title : '')
-  const [description, setDescription] = useState(task ? task.description : '')
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
   const [titleError, setTitleError] = useState(false)
 
   // Los datos llegan mediante fetch, por eso el formulario se rellena cuando están disponibles.
+  useEffect(() => {
+    if (task) {
+      setTitle(task.title)
+      setDescription(task.description ?? '')
+    }
+  }, [task])
 
   if (loading) return <CircularProgress />
 

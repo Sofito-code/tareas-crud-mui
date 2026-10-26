@@ -1,16 +1,17 @@
 import { createTheme } from '@mui/material/styles'
- 
+
+// Los mismos colores del material del curso mantienen la plantilla consistente.
 const theme = createTheme({
   palette: {
-    primary:    { main: '#6d1f8c' },   // morado
-    secondary:  { main: '#0b2ab6' },   // azul
-    background: { default: '#9b9b9d' } // gris de fondo
+    primary: { main: '#6d1f8c' },
+    secondary: { main: '#0b2ab6' },
+    background: { default: '#F5F6FA' },
   },
   shape: { borderRadius: 8 },
   typography: {
-    // sin esto, MUI pone los botones en MAYÚSCULAS
-    button: { textTransform: 'none', fontWeight: 600 }
-  }
+    // MUI usa botones en mayúsculas por defecto; mantenemos su capitalización natural.
+    button: { textTransform: 'none', fontWeight: 600 },
+  },
 })
- 
+
 export default theme
